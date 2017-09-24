@@ -11,12 +11,22 @@ public class Game {
     private Deck deck;
     private ArrayList<Player> players;
 
-    public Game( Deck Deck, ArrayList<Player> players ) {
+    public Game( Deck deck ) {
         this.deck = deck;
-        this.players = players;
+        this.players = new ArrayList<Player>();
     }
 
     public ArrayList<Player> getPlayers() {
         return players;
     }
+
+    public int getSizeOfArray() {
+        return players.size();
+    }
+
+    public void addPlayer( Player player) {
+        players.add( player );
+    }
+
+
 }
