@@ -14,17 +14,20 @@ public class PlayerTest {
     Card card1;
     Card card2;
 
+
     @Test
     public void testPlayerName() {
         player = new Player("Iain");
         assertEquals("Iain", player.getName());
     }
 
+
     @Test
     public void testPlayerHasEmptyHand() {
         player = new Player("Iain");
         assertEquals( 0, player.getSize());
     }
+
 
     @Test
     public void testCanAddCardToPlayerHand() {
@@ -35,5 +38,6 @@ public class PlayerTest {
         player.addCard( card2 );
         assertEquals( 2, player.getSize() );
     }
+    
 
 }

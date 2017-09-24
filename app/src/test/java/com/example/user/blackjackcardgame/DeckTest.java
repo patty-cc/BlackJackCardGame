@@ -15,19 +15,23 @@ public class DeckTest {
 
     Deck cardDeck;
 
+
     @Before
     public void before() {
         cardDeck = new Deck();
     }
+
 
     @Test
     public void checkCardDeckIsEmpty() {
         assertEquals( 0, cardDeck.getSize());
     }
 
+
     @Test
     public void checkCardDeckOnceMade() {
         cardDeck.makeDeck();
         assertEquals( 52, cardDeck.getSize());
     }
+
 }

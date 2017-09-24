@@ -12,11 +12,13 @@ public class CardTest {
 
     Card card;
 
+
     @Test
     public void testCardHasSuit() {
         card = new Card( Suit.CLUBS, Value.JACK);
         assertEquals( Suit.CLUBS, card.getSuit());
     }
+
 
     @Test
     public void testCardHasValue() {
@@ -24,9 +26,11 @@ public class CardTest {
         assertEquals( Value.FIVE, card.getValue());
     }
 
+
     @Test
     public void testCardValue() {
         card = new Card( Suit.HEARTS, Value.ACE );
         assertEquals( 11, Value.ACE.getCardValue());
     }
+
 }
