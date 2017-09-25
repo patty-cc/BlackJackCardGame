@@ -38,6 +38,6 @@ public class PlayerTest {
         player.addCard( card2 );
         assertEquals( 2, player.getSize() );
     }
-    
+
 
 }

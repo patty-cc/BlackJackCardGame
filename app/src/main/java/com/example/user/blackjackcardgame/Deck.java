@@ -7,7 +7,7 @@ import java.util.Random;
  * Created by user on 22/09/2017.
  */
 
-public class Deck implements Dealable{
+public class Deck implements Dealing {
 
     private ArrayList<Card> cardDeck;
     private Random random;
@@ -34,7 +34,6 @@ public class Deck implements Dealable{
 
     public Card deal() {
         int randomIndex = this.random.nextInt(this.cardDeck.size());
-
         Card randomCard = this.cardDeck.remove(randomIndex);
         return randomCard;
     }

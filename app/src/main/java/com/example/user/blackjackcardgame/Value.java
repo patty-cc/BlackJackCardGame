@@ -26,6 +26,10 @@ public enum Value {
         this.cardValue = value;
     }
 
+//    private Value( Integer value, Integer otherValue) {
+//        this.cardValue = value || otherValue;
+//    }
+
     public int getCardValue() {
         return cardValue;
     }
