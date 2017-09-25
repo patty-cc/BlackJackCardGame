@@ -42,6 +42,16 @@ public class DeckTest {
         assertEquals( 50, cardDeck.getSize());
     }
 
+    @Test
+    public void givesTopCardWhenDelt() {
+        cardDeck.makeDeck();
+        Card card = cardDeck.deal();
+        Card card2 = cardDeck.deal();
+        assertEquals( Value.ACE, card.getValue());
+        assertEquals( Value.TWO, card2.getValue());
+
+    }
+
 
 
 

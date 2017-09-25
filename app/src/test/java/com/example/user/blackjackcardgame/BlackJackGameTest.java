@@ -17,7 +17,8 @@ public class BlackJackGameTest {
     public void before() {
         deck = new Deck();
         deck.makeDeck();
-        blackJack = new BlackJackGameClass( deck );
+        BlackJackCardScorer scorer= new BlackJackCardScorer();
+        blackJack = new BlackJackGameClass( deck, scorer );
     }
 
     @Test
@@ -47,5 +48,20 @@ public class BlackJackGameTest {
         blackJack.dealFirstRound();
 
         assertEquals( 48, deck.getSize());
+    }
+
+    @Test
+    public void giveWinner() {
+        Player player1 = new Player( "Iain" );
+        Player player2 = new Player( "Heather" );
+
+        blackJack.addPlayer( player1 );
+        blackJack.addPlayer( player2 );
+
+        blackJack.dealRound();
+
+        //player 1 will receive first and third card: ACE and THREE
+        //player 2 will receive second and forth card: TWO AND FOUR
+        assertEquals( player1, blackJack.winner());
     }
 }

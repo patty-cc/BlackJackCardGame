@@ -7,9 +7,11 @@ import java.util.ArrayList;
  */
 
 public class BlackJackGameClass extends Game {
+    BlackJackCardScorer scorer;
 
-    public BlackJackGameClass( Deck deck) {
+    public BlackJackGameClass( Deck deck, BlackJackCardScorer scorer) {
         super( deck );
+        this.scorer = scorer;
     }
 
     public void dealFirstRound(){
@@ -22,6 +24,18 @@ public class BlackJackGameClass extends Game {
             Card card = deck.deal();
             player.addCard( card );
         }
+    }
+
+    public Player winner(){
+        //set the winner to be the first player
+        Player currentHighScore = players.get(0);
+        //loop through all the players, if their hand score is better than
+        for (Player player: players) {
+            
+        }
+        //... the current winner set them to be winner. (this.scorer.handscore)
+        // return winner
+        return null;
     }
 
 }

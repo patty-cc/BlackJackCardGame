@@ -11,6 +11,11 @@ public class Player {
     private String name;
     private ArrayList<Card> playerHand;
 
+    public ArrayList<Card> getPlayerHand() {
+        return playerHand;
+    }
+
+
 
     public Player( String name ) {
         this.name = name;
