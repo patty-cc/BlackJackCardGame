@@ -25,4 +25,8 @@ public class Card {
         return value;
     }
 
+    public int cardValue() {
+        return value.ordinal() + 1;
+    }
+
 }

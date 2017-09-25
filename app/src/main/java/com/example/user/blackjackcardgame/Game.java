@@ -6,10 +6,10 @@ import java.util.ArrayList;
  * Created by user on 24/09/2017.
  */
 
-public class Game {
+public abstract class Game {
 
-    private Deck deck;
-    private ArrayList<Player> players;
+     Deck deck;
+     ArrayList<Player> players;
 
 
     public Game( Deck deck ) {
@@ -22,7 +22,7 @@ public class Game {
         return players;
     }
 
-
+    // rename to getNumberOfPlayers
     public int getSizeOfArray() {
         return players.size();
     }

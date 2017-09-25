@@ -34,9 +34,11 @@ public class Deck implements Dealing {
 
 
     public Card deal() {
-        int randomIndex = this.random.nextInt(this.cardDeck.size());
-        Card randomCard = this.cardDeck.remove(randomIndex);
-        return randomCard;
+//        int randomIndex = this.random.nextInt(this.cardDeck.size());
+//        Card randomCard = this.cardDeck.get(randomIndex);
+//        this.cardDeck.remove(randomIndex);
+//        return randomCard;
+        return this.cardDeck.remove(0);
     }
 
 

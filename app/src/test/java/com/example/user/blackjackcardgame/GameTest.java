@@ -20,13 +20,11 @@ public class GameTest {
 
     @Test
     public void gameStartsWithNoPlayers() {
-        game = new Game( deck );
         assertEquals( 0 , game.getSizeOfArray());
     }
 
     @Test
     public void canAddPlayerToGame() {
-        game = new Game( deck );
         game.addPlayer( new Player( "Iain"));
         game.addPlayer( new Player( "Tommy"));
 
@@ -35,7 +33,6 @@ public class GameTest {
 
     @Test
     public void canGetPlayerNames() {
-        game = new Game( deck );
         game.addPlayer( new Player( "Jay" ));
         game.addPlayer( new Player( "Rick" ));
 
