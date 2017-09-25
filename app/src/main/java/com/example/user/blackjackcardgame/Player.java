@@ -28,7 +28,7 @@ public class Player {
     }
 
 
-    public void addCard( Card card) {
+    public void addCard(Card card) {
         playerHand.add(card);
     }
 

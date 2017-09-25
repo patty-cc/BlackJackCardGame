@@ -12,6 +12,7 @@ public class Deck implements Dealing {
     private ArrayList<Card> cardDeck;
     private Random random;
 
+
     public Deck() {
         this.cardDeck = new ArrayList<Card>();
         this.random = new Random();
@@ -37,4 +38,6 @@ public class Deck implements Dealing {
         Card randomCard = this.cardDeck.remove(randomIndex);
         return randomCard;
     }
+
+
 }
