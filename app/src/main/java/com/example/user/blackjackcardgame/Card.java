@@ -26,6 +26,14 @@ public class Card {
     }
 
     public int cardValue() {
+        if (value == Value.ACE)
+            return 11;
+        if (value == Value.JACK)
+            return 10;
+        if (value == Value.QUEEN)
+            return 10;
+        if (value == Value.KING)
+            return 10;
         return value.ordinal() + 1;
     }
 

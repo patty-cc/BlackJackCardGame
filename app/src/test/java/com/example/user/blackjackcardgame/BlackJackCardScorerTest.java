@@ -28,4 +28,45 @@ public class BlackJackCardScorerTest {
         cardsToScore.add(card);
         assertEquals(3, scorer.handScore(cardsToScore));
     }
+
+    @Test
+    public void fiveIsFivePoints() {
+        Card card = new Card( Suit.CLUBS, Value.FIVE);
+        cardsToScore.add(card);
+        assertEquals( 5 , scorer.handScore(cardsToScore));
+    }
+
+    @Test
+    public void isCombinedScoreOfMultipleCards() {
+        Card card1 = new Card( Suit.CLUBS, Value.THREE);
+        Card card2 = new Card( Suit.CLUBS, Value.FIVE);
+        cardsToScore.add(card1);
+        cardsToScore.add(card2);
+        assertEquals( 8 , scorer.handScore(cardsToScore));
+    }
+
+    @Test
+    public void considersFaceCardsAsTen() {
+        Card card1 = new Card( Suit.CLUBS, Value.KING);
+        cardsToScore.add(card1);
+        assertEquals( 10 , scorer.handScore(cardsToScore));
+    }
+
+    @Test
+    public void considersAceAs11() {
+        Card card1 = new Card( Suit.CLUBS, Value.ACE);
+        cardsToScore.add(card1);
+        assertEquals( 11 , scorer.handScore(cardsToScore));
+    }
+
+    @Test
+    public void scoresABlackJack() {
+        Card card1 = new Card( Suit.CLUBS, Value.ACE);
+        Card card2 = new Card( Suit.CLUBS, Value.KING);
+
+        cardsToScore.add(card1);
+        cardsToScore.add(card2);
+
+        assertEquals( 21 , scorer.handScore(cardsToScore));
+    }
 }
