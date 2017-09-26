@@ -41,7 +41,7 @@ public class BlackJackGameClass extends Game {
 
         for ( Player player: players ) {
             int playerScore = this.scorer.handScore(player.getPlayerHand());
-           if( playerScore > winningScore  && playerScore < 21 ){
+           if( playerScore > winningScore  && playerScore <= 21 ){
                currentWinner = player;
                winningScore = playerScore;
            }

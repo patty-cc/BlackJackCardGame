@@ -26,6 +26,12 @@ public class CardTest {
         assertEquals( 5, card.cardValue());
     }
 
+    @Test
+    public void testCardGivesPrettyName() {
+        card = new Card( Suit.DIAMONDS, Value.FIVE);
+        assertEquals( "FIVE DIAMONDS", card.prettyName());
+    }
+
 
 //    @Test
 //    public void testCardValue() {

@@ -37,4 +37,8 @@ public class Card {
         return value.ordinal() + 1;
     }
 
+    public String cardOutputName(){
+        return value.toString() + " " + suit.toString();
+    }
+
 }
