@@ -29,7 +29,7 @@ public class CardTest {
     @Test
     public void testCardGivesPrettyName() {
         card = new Card( Suit.DIAMONDS, Value.FIVE);
-        assertEquals( "FIVE DIAMONDS", card.prettyName());
+        assertEquals( "FIVE DIAMONDS", card.cardOutputName());
     }
 
 

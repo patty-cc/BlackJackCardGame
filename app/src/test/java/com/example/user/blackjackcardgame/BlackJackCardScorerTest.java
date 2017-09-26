@@ -54,6 +54,13 @@ public class BlackJackCardScorerTest {
     }
 
     @Test
+    public void considersJackCardsAsTen() {
+        Card card1 = new Card( Suit.CLUBS, Value.JACK);
+        cardsToScore.add(card1);
+        assertEquals( 10 , scorer.handScore(cardsToScore));
+    }
+
+    @Test
     public void considersAceAs11() {
         Card card1 = new Card( Suit.CLUBS, Value.ACE);
         cardsToScore.add(card1);

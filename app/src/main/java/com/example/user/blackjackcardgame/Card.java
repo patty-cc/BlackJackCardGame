@@ -38,7 +38,7 @@ public class Card {
     }
 
     public String cardOutputName(){
-        return value.toString() + " " + suit.toString();
+        return value.toString() + " OF " + suit.toString();
     }
 
 }

@@ -23,7 +23,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
         playerTwoText = ( TextView ) findViewById( R.id.player_two_name_text );
         player1card1 = ( TextView ) findViewById( R.id.player1card1);
         player1card2 = ( TextView ) findViewById( R.id.player1card2);
-        player2card2 = ( TextView ) findViewById( R.id.player2card1);
+        player2card1 = ( TextView ) findViewById( R.id.player2card1);
         player2card2 = ( TextView ) findViewById( R.id.player2card2);
 
         Intent intent = getIntent();
@@ -34,6 +34,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
 
         Deck deck = new Deck();
         deck.makeDeck();
+        deck.shuffleDeck();
 
         BlackJackCardScorer scorer = new BlackJackCardScorer();
         BlackJackGameClass blackJack = new BlackJackGameClass( deck, scorer );

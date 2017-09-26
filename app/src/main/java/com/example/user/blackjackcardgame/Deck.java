@@ -1,6 +1,7 @@
 package com.example.user.blackjackcardgame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -22,7 +23,7 @@ public class Deck implements Dealing {
     public void makeDeck() {
         for (Suit suit: Suit.values()) {
             for ( Value value: Value.values()){
-                cardDeck.add( new Card( suit, value));
+                cardDeck.add( new Card( suit, value ));
             }
         }
     }
@@ -32,12 +33,12 @@ public class Deck implements Dealing {
         return cardDeck.size();
     }
 
+    public void shuffleDeck() {
+        Collections.shuffle( cardDeck );
+    }
+
 
     public Card deal() {
-//        int randomIndex = this.random.nextInt(this.cardDeck.size());
-//        Card randomCard = this.cardDeck.get(randomIndex);
-//        this.cardDeck.remove(randomIndex);
-//        return randomCard;
         return this.cardDeck.remove(0);
     }
 
