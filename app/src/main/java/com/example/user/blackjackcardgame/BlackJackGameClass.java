@@ -40,8 +40,10 @@ public class BlackJackGameClass extends Game {
         Player currentWinner = null;
 
         for ( Player player: players ) {
+
             int playerScore = this.scorer.handScore(player.getPlayerHand());
-           if( playerScore > winningScore  && playerScore <= 21 ){
+
+            if( playerScore > winningScore  && playerScore <= 21 ){
                currentWinner = player;
                winningScore = playerScore;
            }
@@ -50,6 +52,27 @@ public class BlackJackGameClass extends Game {
     }
 
 
+    public String gameIsDraw() {
+
+        int winningScore = 0;
+        Player currentWinner = null;
+
+        for (Player player : players) {
+
+            int playerScore = this.scorer.handScore(player.getPlayerHand());
+
+            if( playerScore > winningScore  && playerScore <= 21 ){
+                currentWinner = player;
+                winningScore = playerScore;
+            }
+
+            else if((playerScore == winningScore) && (player != currentWinner)) {
+                return "Game is a tie";
+            }
+
+        }
+        return "";
+    }
 
 
 }

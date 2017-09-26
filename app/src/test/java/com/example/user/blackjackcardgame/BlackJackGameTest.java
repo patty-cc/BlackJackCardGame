@@ -89,6 +89,25 @@ public class BlackJackGameTest {
         assertEquals( player2, blackJack.winner());
     }
 
+    @Test
+    public void checkIfGameCanBeDrawn() {
+        Player player1 = new Player("Iain:");
+        Player player2 = new Player( "Ben" );
+
+        blackJack.addPlayer( player1 );
+        blackJack.addPlayer( player2 );
+
+        Card king = new Card(Suit.CLUBS, Value.KING);
+        Card ten = new Card(Suit.CLUBS, Value.TEN);
+
+        player1.addCard( king );
+        player1.addCard( ten );
+        player2.addCard( king );
+        player2.addCard( ten );
+
+        assertEquals( "Game is a tie", blackJack.gameIsDraw() );
+    }
+
 
 
 
