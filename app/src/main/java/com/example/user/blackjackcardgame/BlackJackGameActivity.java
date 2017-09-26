@@ -8,6 +8,7 @@ import android.widget.TextView;
 public class BlackJackGameActivity extends AppCompatActivity {
 
     TextView playerOneText;
+    TextView playerTwoText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,12 +16,15 @@ public class BlackJackGameActivity extends AppCompatActivity {
         setContentView( R.layout.activity_black_jack_game );
 
         playerOneText = ( TextView ) findViewById( R.id.player_one_name_text );
+        playerTwoText = ( TextView ) findViewById( R.id.player_two_name_text );
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
         String playerOneName = extras.getString( "playerOneName" );
+        String playerTwoName = extras.getString( "playerTwoName" );
 
         playerOneText.setText( playerOneName );
+        playerTwoText.setText( playerTwoName );
     }
 }
