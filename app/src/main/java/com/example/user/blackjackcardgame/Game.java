@@ -22,8 +22,8 @@ public abstract class Game {
         return players;
     }
 
-    // rename to getNumberOfPlayers
-    public int getSizeOfArray() {
+
+    public int getNumberOfPlayers() {
         return players.size();
     }
 

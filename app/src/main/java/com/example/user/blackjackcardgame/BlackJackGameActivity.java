@@ -13,6 +13,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
     TextView player1card2;
     TextView player2card1;
     TextView player2card2;
+    TextView winnerText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
         player1card2 = ( TextView ) findViewById( R.id.player1card2);
         player2card1 = ( TextView ) findViewById( R.id.player2card1);
         player2card2 = ( TextView ) findViewById( R.id.player2card2);
+        winnerText = ( TextView ) findViewById( R.id.game_info_text);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -54,5 +56,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
         player1card2.setText(player1.getPlayerHand().get(1).cardOutputName());
         player2card1.setText(player2.getPlayerHand().get(0).cardOutputName());
         player2card2.setText(player2.getPlayerHand().get(1).cardOutputName());
+
+        winnerText.setText(blackJack.winner().getName() + " " + "is the winner" ) ;
     }
 }

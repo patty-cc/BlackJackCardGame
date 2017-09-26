@@ -20,7 +20,7 @@ public class GameTest {
 
     @Test
     public void gameStartsWithNoPlayers() {
-        assertEquals( 0 , game.getSizeOfArray());
+        assertEquals( 0 , game.getNumberOfPlayers());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class GameTest {
         game.addPlayer( new Player( "Iain"));
         game.addPlayer( new Player( "Tommy"));
 
-        assertEquals( 2 , game.getSizeOfArray());
+        assertEquals( 2 , game.getNumberOfPlayers());
     }
 
     @Test
