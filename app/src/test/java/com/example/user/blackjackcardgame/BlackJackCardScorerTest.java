@@ -12,6 +12,7 @@ import static junit.framework.Assert.assertEquals;
  */
 
 public class BlackJackCardScorerTest {
+
     BlackJackCardScorer scorer;
     ArrayList<Card> cardsToScore;
 
@@ -69,4 +70,7 @@ public class BlackJackCardScorerTest {
 
         assertEquals( 21 , scorer.handScore(cardsToScore));
     }
+
+
+
 }

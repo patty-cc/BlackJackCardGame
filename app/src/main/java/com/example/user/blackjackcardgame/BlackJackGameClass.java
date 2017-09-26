@@ -7,17 +7,21 @@ import java.util.ArrayList;
  */
 
 public class BlackJackGameClass extends Game {
+
     BlackJackCardScorer scorer;
+
 
     public BlackJackGameClass( Deck deck, BlackJackCardScorer scorer) {
         super( deck );
         this.scorer = scorer;
     }
 
+
     public void dealFirstRound(){
         dealRound();
         dealRound();
     }
+
 
     public void dealRound() {
         for (Player player: players) {
@@ -25,17 +29,27 @@ public class BlackJackGameClass extends Game {
             player.addCard( card );
         }
     }
+    
 
-    public Player winner(){
+    public Player winner() {
         //set the winner to be the first player
-        Player currentHighScore = players.get(0);
         //loop through all the players, if their hand score is better than
-        for (Player player: players) {
-            
-        }
         //... the current winner set them to be winner. (this.scorer.handscore)
         // return winner
-        return null;
+        int winningScore = 0;
+        Player currentWinner = null;
+
+        for ( Player player: players ) {
+            int playerScore = this.scorer.handScore(player.getPlayerHand());
+           if( playerScore > winningScore  && playerScore < 21 ){
+               currentWinner = player;
+               winningScore = playerScore;
+           }
+        }
+        return currentWinner;
     }
+
+
+
 
 }

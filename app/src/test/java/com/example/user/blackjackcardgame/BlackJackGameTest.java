@@ -17,7 +17,7 @@ public class BlackJackGameTest {
     public void before() {
         deck = new Deck();
         deck.makeDeck();
-        BlackJackCardScorer scorer= new BlackJackCardScorer();
+        BlackJackCardScorer scorer = new BlackJackCardScorer();
         blackJack = new BlackJackGameClass( deck, scorer );
     }
 
@@ -57,11 +57,40 @@ public class BlackJackGameTest {
 
         blackJack.addPlayer( player1 );
         blackJack.addPlayer( player2 );
+        Card two = new Card(Suit.CLUBS, Value.TWO);
+        Card three = new Card(Suit.HEARTS, Value.THREE);
+        player1.addCard(two);
+        player2.addCard(three);
 
-        blackJack.dealRound();
-
-        //player 1 will receive first and third card: ACE and THREE
-        //player 2 will receive second and forth card: TWO AND FOUR
-        assertEquals( player1, blackJack.winner());
+//        blackJack.dealRound();
+        assertEquals( player2, blackJack.winner());
     }
+
+    @Test
+    public void playerGoesBustOtherPersonWins() {
+        Player player1 = new Player( "Iain" );
+        Player player2 = new Player( "Ben" );
+
+        blackJack.addPlayer( player1 );
+        blackJack.addPlayer( player2 );
+
+        Card two = new Card(Suit.CLUBS, Value.TWO);
+        Card ace = new Card(Suit.CLUBS, Value.ACE);
+        Card jack = new Card(Suit.CLUBS, Value.JACK);
+
+        player1.addCard(two);
+        player1.addCard(ace);
+        player1.addCard(jack);
+
+        player2.addCard(jack);
+        player2.addCard(two);
+
+//        blackJack.dealRound();
+        assertEquals( player2, blackJack.winner());
+    }
+
+
+
+
+
 }

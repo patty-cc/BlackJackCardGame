@@ -25,7 +25,7 @@ public class Card {
         return value;
     }
 
-    public int cardValue() {
+    public int cardValue( ) {
         if (value == Value.ACE)
             return 11;
         if (value == Value.JACK)
