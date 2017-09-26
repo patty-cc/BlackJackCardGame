@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">BlackJackCardGame</string>
+    <string name="playblackjack">Play BlackJack</string>
+    <string name="player_one_enter_text">Player one name</string>
+    <string name="player_two_enter_name">Player two name</string>
 </resources>

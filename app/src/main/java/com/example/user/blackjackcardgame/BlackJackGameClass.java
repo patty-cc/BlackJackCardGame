@@ -29,7 +29,7 @@ public class BlackJackGameClass extends Game {
             player.addCard( card );
         }
     }
-    
+
 
     public Player winner() {
         //set the winner to be the first player
