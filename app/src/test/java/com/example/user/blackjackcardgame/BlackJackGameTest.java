@@ -142,6 +142,26 @@ public class BlackJackGameTest {
         assertEquals( "Iain has BlackJack you win", blackJack.winner() );
     }
 
+    @Test
+    public void checkPlayerWinsWhenHasBlackJack() {
+        Player player1 = new Player("Iain");
+        Player player2 = new Player( "Ben" );
+
+        blackJack.addPlayer( player1 );
+        blackJack.addPlayer( player2 );
+
+        Card king = new Card(Suit.CLUBS, Value.KING);
+        Card ten = new Card(Suit.CLUBS, Value.TEN);
+        Card ace = new Card(Suit.HEARTS, Value.ACE);
+
+        player1.addCard( king );
+        player1.addCard( ace );
+        player2.addCard( king );
+        player2.addCard( ten );
+
+        assertEquals( "Iain has BlackJack you win", blackJack.playerWinsWithBlackJack() );
+    }
+
 
 
 

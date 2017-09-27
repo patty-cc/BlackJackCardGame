@@ -66,13 +66,21 @@ public class BlackJackGameClass extends Game {
                 return "Game is a tie";
             }
 
-            if ( playerHasBlackJack(player) ) {
+            if (playerHasBlackJack(player)) {
                 return player.getName() + " has BlackJack you win";
             }
-
         }
 
         return currentWinner.getName() + " is the winner";
+    }
+
+    public String playerWinsWithBlackJack() {
+        for (Player player : players) {
+            if (playerHasBlackJack(player)) {
+                return player.getName() + " has BlackJack you win";
+            }
+        }
+        return "";
     }
 
 
