@@ -61,11 +61,17 @@ public class BlackJackGameClass extends Game {
             if (playerScore > winningScore && playerScore <= 21) {
                 currentWinner = player;
                 winningScore = playerScore;
+
             } else if ((playerScore == winningScore) && (player != currentWinner)) {
                 return "Game is a tie";
             }
 
+            if ( playerHasBlackJack(player) ) {
+                return player.getName() + " You have BlackJack you win";
+            }
+
         }
+
         return currentWinner.getName() + " is the winner";
     }
 
