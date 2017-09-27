@@ -16,11 +16,13 @@ public class BlackJackGameActivity extends AppCompatActivity {
     TextView player1card2;
     TextView player1card3;
     TextView player1card4;
+    TextView player1card5;
 
     TextView player2card1;
     TextView player2card2;
     TextView player2card3;
     TextView player2card4;
+    TextView player2card5;
 
     TextView winnerText;
 
@@ -44,11 +46,13 @@ public class BlackJackGameActivity extends AppCompatActivity {
         player1card2 = ( TextView ) findViewById( R.id.player1card2);
         player1card3 = ( TextView ) findViewById( R.id.player1card3);
         player1card4 = ( TextView ) findViewById( R.id.player1card4);
+        player1card5 = ( TextView ) findViewById( R.id.player1card5);
 
         player2card1 = ( TextView ) findViewById( R.id.player2card1);
         player2card2 = ( TextView ) findViewById( R.id.player2card2);
         player2card3 = ( TextView ) findViewById( R.id.player2card3);
         player2card4 = ( TextView ) findViewById( R.id.player2card4);
+        player2card5 = ( TextView ) findViewById( R.id.player2card5);
 
         winnerText = ( TextView ) findViewById( R.id.game_info_text);
 
@@ -93,8 +97,14 @@ public class BlackJackGameActivity extends AppCompatActivity {
         blackJack.dealCard( player1 );
         player1card3.setText(player1.getPlayerHand().get(2).cardOutputName());
 
-        if( player1.getPlayerHand().size() > 3) {
+        if( player1.getPlayerHand().size() > 3 ) {
             player1card4.setText(player1.getPlayerHand().get(3).cardOutputName());
+            if (scorer.handScore( player1.getPlayerHand() ) > 21 ) {
+                winnerText.setText(blackJack.winner() + " Player two wins");
+            }
+        }
+        else if( player1.getPlayerHand().size() > 4 ) {
+            player1card5.setText(player1.getPlayerHand().get(4).cardOutputName());
         }
 
     }
@@ -105,6 +115,12 @@ public class BlackJackGameActivity extends AppCompatActivity {
 
         if( player2.getPlayerHand().size() > 3) {
             player2card4.setText(player2.getPlayerHand().get(3).cardOutputName());
+            if (scorer.handScore( player2.getPlayerHand() ) > 21 ) {
+                winnerText.setText(blackJack.winner() + " Player one wins");
+            }
+        }
+        else if(player2.getPlayerHand().size() > 4) {
+            player2card5.setText(player2.getPlayerHand().get(4).cardOutputName());
         }
     }
 
