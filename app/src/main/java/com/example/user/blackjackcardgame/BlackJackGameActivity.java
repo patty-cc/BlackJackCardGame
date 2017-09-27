@@ -57,6 +57,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
         player2card1.setText(player2.getPlayerHand().get(0).cardOutputName());
         player2card2.setText(player2.getPlayerHand().get(1).cardOutputName());
 
-        winnerText.setText(blackJack.winner().getName() + " " + "is the winner" ) ;
+        winnerText.setText(blackJack.winner() ) ;
+//        .getName() + " " + "is the winner"
     }
 }

@@ -31,25 +31,25 @@ public class BlackJackGameClass extends Game {
     }
 
 
-    public Player winner() {
+//    public Player winner() {
+//
+//        int winningScore = 0;
+//        Player currentWinner = null;
+//
+//        for ( Player player: players ) {
+//
+//            int playerScore = this.scorer.handScore(player.getPlayerHand());
+//
+//            if( playerScore > winningScore  && playerScore <= 21 ){
+//               currentWinner = player;
+//               winningScore = playerScore;
+//           }
+//        }
+//        return currentWinner;
+//    }
 
-        int winningScore = 0;
-        Player currentWinner = null;
 
-        for ( Player player: players ) {
-
-            int playerScore = this.scorer.handScore(player.getPlayerHand());
-
-            if( playerScore > winningScore  && playerScore <= 21 ){
-               currentWinner = player;
-               winningScore = playerScore;
-           }
-        }
-        return currentWinner;
-    }
-
-
-    public String gameIsDraw() {
+    public String winner() {
 
         int winningScore = 0;
         Player currentWinner = null;
@@ -68,7 +68,7 @@ public class BlackJackGameClass extends Game {
             }
 
         }
-        return "";
+        return currentWinner.getName() + " is the winner";
     }
 
 

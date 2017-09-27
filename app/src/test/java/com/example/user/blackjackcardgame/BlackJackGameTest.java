@@ -86,7 +86,7 @@ public class BlackJackGameTest {
         player2.addCard(two);
 
 //        blackJack.dealRound();
-        assertEquals( player2, blackJack.winner());
+        assertEquals( "Ben is the winner", blackJack.winner());
     }
 
     @Test
@@ -105,7 +105,7 @@ public class BlackJackGameTest {
         player2.addCard( king );
         player2.addCard( ten );
 
-        assertEquals( "Game is a tie", blackJack.gameIsDraw() );
+        assertEquals( "Game is a tie", blackJack.winner() );
     }
 
 
