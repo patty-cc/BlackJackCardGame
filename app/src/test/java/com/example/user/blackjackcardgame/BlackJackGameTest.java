@@ -91,7 +91,7 @@ public class BlackJackGameTest {
 
     @Test
     public void checkIfGameCanBeDrawn() {
-        Player player1 = new Player("Iain:");
+        Player player1 = new Player("Iain");
         Player player2 = new Player( "Ben" );
 
         blackJack.addPlayer( player1 );
@@ -139,7 +139,7 @@ public class BlackJackGameTest {
         player2.addCard( king );
         player2.addCard( ten );
 
-        assertEquals( "Iain You have BlackJack you win", blackJack.winner() );
+        assertEquals( "Iain has BlackJack you win", blackJack.winner() );
     }
 
 

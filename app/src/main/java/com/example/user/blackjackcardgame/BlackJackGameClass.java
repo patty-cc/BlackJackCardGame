@@ -67,7 +67,7 @@ public class BlackJackGameClass extends Game {
             }
 
             if ( playerHasBlackJack(player) ) {
-                return player.getName() + " You have BlackJack you win";
+                return player.getName() + " has BlackJack you win";
             }
 
         }

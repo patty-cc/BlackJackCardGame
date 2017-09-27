@@ -34,6 +34,9 @@ public class BlackJackGameActivity extends AppCompatActivity {
         String playerOneName = extras.getString( "playerOneName" );
         String playerTwoName = extras.getString( "playerTwoName" );
 
+        Player player1 = new Player( playerOneName );
+        Player player2 = new Player( playerTwoName );
+
         Deck deck = new Deck();
         deck.makeDeck();
         deck.shuffleDeck();
@@ -41,8 +44,6 @@ public class BlackJackGameActivity extends AppCompatActivity {
         BlackJackCardScorer scorer = new BlackJackCardScorer();
         BlackJackGameClass blackJack = new BlackJackGameClass( deck, scorer );
 
-        Player player1 = new Player( playerOneName );
-        Player player2 = new Player( playerTwoName );
 
         blackJack.addPlayer( player1 );
         blackJack.addPlayer( player2 );
