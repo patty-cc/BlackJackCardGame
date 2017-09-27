@@ -16,7 +16,7 @@ public class BlackJackCardScorer {
         int score = 0;
 
         for (Card card: cardsToScore){
-            score += card.cardValue();
+            score += card.cardNumberValue();
         }
 
         return score;

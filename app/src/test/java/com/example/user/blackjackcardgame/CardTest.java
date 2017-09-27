@@ -23,7 +23,7 @@ public class CardTest {
     @Test
     public void testCardHasValue() {
         card = new Card( Suit.DIAMONDS, Value.FIVE);
-        assertEquals( 5, card.cardValue());
+        assertEquals( 5, card.cardNumberValue());
     }
 
     @Test

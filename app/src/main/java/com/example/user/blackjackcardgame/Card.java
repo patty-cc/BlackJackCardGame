@@ -21,11 +21,11 @@ public class Card {
     }
 
 
-    public Value getValue() {
+    public Value getCardValue() {
         return value;
     }
 
-    public int cardValue( ) {
+    public int cardNumberValue( ) {
         if (value == Value.ACE)
             return 11;
         if (value == Value.JACK)

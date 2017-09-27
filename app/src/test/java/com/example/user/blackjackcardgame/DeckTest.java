@@ -43,12 +43,12 @@ public class DeckTest {
     }
 
     @Test
-    public void givesTopCardWhenDelt() {
+    public void givesTopCardWhenDealt() {
         cardDeck.makeDeck();
         Card card = cardDeck.deal();
         Card card2 = cardDeck.deal();
-        assertEquals( Value.ACE, card.getValue());
-        assertEquals( Value.TWO, card2.getValue());
+        assertEquals( Value.ACE, card.getCardValue());
+        assertEquals( Value.TWO, card2.getCardValue());
 
     }
 
