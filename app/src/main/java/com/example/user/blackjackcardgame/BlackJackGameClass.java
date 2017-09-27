@@ -11,22 +11,22 @@ public class BlackJackGameClass extends Game {
     BlackJackCardScorer scorer;
 
 
-    public BlackJackGameClass( Deck deck, BlackJackCardScorer scorer) {
-        super( deck );
+    public BlackJackGameClass(Deck deck, BlackJackCardScorer scorer) {
+        super(deck);
         this.scorer = scorer;
     }
 
 
-    public void dealFirstRound(){
+    public void dealFirstRound() {
         dealRound();
         dealRound();
     }
 
 
     public void dealRound() {
-        for (Player player: players) {
+        for (Player player : players) {
             Card card = deck.deal();
-            player.addCard( card );
+            player.addCard(card);
         }
     }
 
@@ -58,12 +58,10 @@ public class BlackJackGameClass extends Game {
 
             int playerScore = this.scorer.handScore(player.getPlayerHand());
 
-            if( playerScore > winningScore  && playerScore <= 21 ){
+            if (playerScore > winningScore && playerScore <= 21) {
                 currentWinner = player;
                 winningScore = playerScore;
-            }
-
-            else if((playerScore == winningScore) && (player != currentWinner)) {
+            } else if ((playerScore == winningScore) && (player != currentWinner)) {
                 return "Game is a tie";
             }
 
@@ -72,4 +70,24 @@ public class BlackJackGameClass extends Game {
     }
 
 
+
+    public boolean playerHasBlackJack(Player player) {
+
+        Boolean playerHasAce = false;
+        Boolean playerHasCardOfValueTen = false;
+
+        for (Card card: player.getPlayerHand()) {
+            if (card.getCardValue() == Value.ACE) {
+                playerHasAce =  true;
+            }
+            if (card.cardNumberValue() == 10) {
+                playerHasCardOfValueTen = true;
+            }
+        }
+        if (playerHasAce.equals(true) && playerHasCardOfValueTen.equals(true)){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
