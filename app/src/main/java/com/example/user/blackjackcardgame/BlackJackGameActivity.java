@@ -11,15 +11,24 @@ public class BlackJackGameActivity extends AppCompatActivity {
 
     TextView playerOneText;
     TextView playerTwoText;
+
     TextView player1card1;
     TextView player1card2;
     TextView player1card3;
+    TextView player1card4;
+
     TextView player2card1;
     TextView player2card2;
+    TextView player2card3;
+
     TextView winnerText;
+
     Button player1TwistButton;
+    Button player2TwistButton;
+
     BlackJackGameClass blackJack;
     Player player1;
+    Player player2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +37,20 @@ public class BlackJackGameActivity extends AppCompatActivity {
 
         playerOneText = ( TextView ) findViewById( R.id.player_one_name_text );
         playerTwoText = ( TextView ) findViewById( R.id.player_two_name_text );
+
         player1card1 = ( TextView ) findViewById( R.id.player1card1);
         player1card2 = ( TextView ) findViewById( R.id.player1card2);
         player1card3 = ( TextView ) findViewById( R.id.player1card3);
+        player1card4 = ( TextView ) findViewById( R.id.player1card4);
+
         player2card1 = ( TextView ) findViewById( R.id.player2card1);
         player2card2 = ( TextView ) findViewById( R.id.player2card2);
+        player2card3 = ( TextView ) findViewById( R.id.player2card3);
+
         winnerText = ( TextView ) findViewById( R.id.game_info_text);
 
         player1TwistButton = ( Button ) findViewById( R.id.player1_twist_button);
+        player2TwistButton = ( Button ) findViewById( R.id.player2_twist_button);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -44,7 +59,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
         String playerTwoName = extras.getString( "playerTwoName" );
 
         player1 = new Player( playerOneName );
-        Player player2 = new Player( playerTwoName );
+        player2 = new Player( playerTwoName );
 
         Deck deck = new Deck();
         deck.makeDeck();
@@ -72,10 +87,18 @@ public class BlackJackGameActivity extends AppCompatActivity {
     }
 
     public void onPlayer1HitButtonClicked(View view) {
-        Card card = blackJack.deck.deal();
-        player1.addCard( card );
-
+        blackJack.dealCard( player1 );
         player1card3.setText(player1.getPlayerHand().get(2).cardOutputName());
+        //check that they have 4 cards
+        if( player1.getPlayerHand().size() > 3) {
+            player1card4.setText(player1.getPlayerHand().get(3).cardOutputName());
+        }
+
+    }
+
+    public void onPlayer2HitButtonClicked(View view) {
+        blackJack.dealCard( player2 );
+        player2card3.setText(player2.getPlayerHand().get(2).cardOutputName());
     }
 
 

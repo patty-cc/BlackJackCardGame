@@ -30,6 +30,15 @@ public class BlackJackGameClass extends Game {
         }
     }
 
+    public void dealCard(Player player) {
+
+        int playerScore = this.scorer.handScore(player.getPlayerHand());
+        if ( playerScore < 21 ) {
+            Card card = deck.deal();
+            player.addCard(card);
+        }
+    }
+
 
 //    public Player winner() {
 //
