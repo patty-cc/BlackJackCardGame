@@ -32,10 +32,7 @@ public class BlackJackGameClass extends Game {
 
 
     public Player winner() {
-        //set the winner to be the first player
-        //loop through all the players, if their hand score is better than
-        //... the current winner set them to be winner. (this.scorer.handscore)
-        // return winner
+
         int winningScore = 0;
         Player currentWinner = null;
 
