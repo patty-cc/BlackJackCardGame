@@ -20,6 +20,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
     TextView player2card1;
     TextView player2card2;
     TextView player2card3;
+    TextView player2card4;
 
     TextView winnerText;
 
@@ -27,6 +28,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
     Button player2TwistButton;
 
     BlackJackGameClass blackJack;
+    BlackJackCardScorer scorer;
     Player player1;
     Player player2;
 
@@ -46,6 +48,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
         player2card1 = ( TextView ) findViewById( R.id.player2card1);
         player2card2 = ( TextView ) findViewById( R.id.player2card2);
         player2card3 = ( TextView ) findViewById( R.id.player2card3);
+        player2card4 = ( TextView ) findViewById( R.id.player2card4);
 
         winnerText = ( TextView ) findViewById( R.id.game_info_text);
 
@@ -65,7 +68,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
         deck.makeDeck();
         deck.shuffleDeck();
 
-        BlackJackCardScorer scorer = new BlackJackCardScorer();
+        scorer = new BlackJackCardScorer();
         blackJack = new BlackJackGameClass( deck, scorer );
 
 
@@ -89,7 +92,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
     public void onPlayer1HitButtonClicked(View view) {
         blackJack.dealCard( player1 );
         player1card3.setText(player1.getPlayerHand().get(2).cardOutputName());
-        //check that they have 4 cards
+
         if( player1.getPlayerHand().size() > 3) {
             player1card4.setText(player1.getPlayerHand().get(3).cardOutputName());
         }
@@ -99,6 +102,10 @@ public class BlackJackGameActivity extends AppCompatActivity {
     public void onPlayer2HitButtonClicked(View view) {
         blackJack.dealCard( player2 );
         player2card3.setText(player2.getPlayerHand().get(2).cardOutputName());
+
+        if( player2.getPlayerHand().size() > 3) {
+            player2card4.setText(player2.getPlayerHand().get(3).cardOutputName());
+        }
     }
 
 

@@ -32,11 +32,11 @@ public class BlackJackGameClass extends Game {
 
     public void dealCard(Player player) {
 
-        int playerScore = this.scorer.handScore(player.getPlayerHand());
-        if ( playerScore < 21 ) {
+//        int playerScore = this.scorer.handScore(player.getPlayerHand());
+//        if ( playerScore < 21 ) {
             Card card = deck.deal();
             player.addCard(card);
-        }
+//        }
     }
 
 
@@ -73,11 +73,13 @@ public class BlackJackGameClass extends Game {
 
             } else if ((playerScore == winningScore) && (player != currentWinner)) {
                 return "Game is a tie";
+            } else if (playerScore > 21 ) {
+                return "You're Bust";
             }
 
-            if (playerHasBlackJack(player)) {
-                return player.getName() + " has BlackJack you win";
-            }
+//            if (playerHasBlackJack(player)) {
+//                return player.getName() + " has BlackJack you win";
+//            }
         }
 
         return currentWinner.getName() + " is the winner";
